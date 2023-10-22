@@ -2,12 +2,40 @@ const parentDiv = document.querySelector("div");
 function makeGrid (gridDimensions) {
     for (let i = 1; i <= (gridDimensions * gridDimensions); i++) {
         const childDiv = document.createElement("div");
+        childDiv.textContent = "us";
         childDiv.classList.add("grid-divs");
-        childDiv.textContent = "hello"; // have to provide some text inside the childDiv otherwise it is not joined together and have some spacing in between
         parentDiv.appendChild(childDiv);
-            if (i == gridDimensions || (i % gridDimensions == 0)) {
-                parentDiv.appendChild(document.createElement("br"));
+            if ((i % gridDimensions) == 0) {
+                const lineBreak = document.createElement("br");
+                parentDiv.appendChild(lineBreak);
             }
         }
     }
-makeGrid(16);
+
+makeGrid(32);
+
+const allChildDivs = document.querySelectorAll(".grid-divs");
+let clicky = false;
+
+    allChildDivs.forEach((eachDiv) => {
+        eachDiv.addEventListener("mouseenter", () => {
+            eachDiv.style.backgroundColor = "lightgreen";
+        })
+        eachDiv.addEventListener("mouseleave", () => {
+            eachDiv.style.backgroundColor = "lightgreen";
+        })
+        eachDiv.addEventListener ("click", () => { // use the if else statement inside the click event function to have the color selected inside the div after a click
+            eachDiv.style.backgroundColor = "yellow";
+            clicky = true;
+            if (clicky) {
+                eachDiv.addEventListener("mouseleave", () => {
+                    eachDiv.style.backgroundColor = "yellow";
+                })
+                }
+                else {
+                eachDiv.addEventListener("mouseleave", () => {
+                    eachDiv.style.backgroundColor = "white";
+                })
+            }
+        })
+    })

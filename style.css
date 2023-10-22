@@ -1,18 +1,18 @@
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .container {
-    border: 5px solid black; /* add a border */
-    background-color: red;
-    padding: 16px;
+    padding: 8px;
 }
 
 .grid-divs {
-    border: 2px solid black;
-    background-color: white;
-    padding: 16px;
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
     color: transparent;
     display: inline-block; /* using inline-block we can put one div below another, it also automatically goes onto the next line when container space ends */
+    background: white;
 }
