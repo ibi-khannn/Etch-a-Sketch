@@ -3,7 +3,7 @@ function makeGrid (gridDimensions) {
     for (let i = 1; i <= gridDimensions; i++) {
         const col = document.createElement("div");
         col.classList.add("cols");
-            for (let j = 1; j <+ gridDimensions; j++) {
+            for (let j = 1; j <= gridDimensions; j++) {
                 const row = document.createElement("div");
                 row.classList.add("rows");
                 col.appendChild(row);
@@ -12,7 +12,7 @@ function makeGrid (gridDimensions) {
         }
     }
 
-makeGrid(32);
+makeGrid(12);
 
 const allChildDivs = document.querySelectorAll(".rows");
 let clicky = false;
