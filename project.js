@@ -1,21 +1,20 @@
 const parentDiv = document.querySelector("div");
 function makeGrid (gridDimensions) {
-    for (let i = 1; i <= (gridDimensions * gridDimensions); i++) {
-        const childDiv = document.createElement("div");
-        childDiv.classList.add("grid-divs");
-        childDiv.style.width = "50px";
-        childDiv.style.height = "50px";
-        parentDiv.appendChild(childDiv);
-            if ((i % gridDimensions) == 0) {
-                const lineBreak = document.createElement("br");
-                parentDiv.appendChild(lineBreak);
+    for (let i = 1; i <= gridDimensions; i++) {
+        const col = document.createElement("div");
+        col.classList.add("cols");
+            for (let j = 1; j <+ gridDimensions; j++) {
+                const row = document.createElement("div");
+                row.classList.add("rows");
+                col.appendChild(row);
             }
+        parentDiv.appendChild(col);
         }
     }
 
-makeGrid(4);
+makeGrid(32);
 
-const allChildDivs = document.querySelectorAll(".grid-divs");
+const allChildDivs = document.querySelectorAll(".rows");
 let clicky = false;
 
     allChildDivs.forEach((eachDiv) => {

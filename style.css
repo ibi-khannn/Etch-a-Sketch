@@ -1,16 +1,24 @@
 body {
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .container {
-    margin: 200px auto;
-    line-height: 0; /* USE LINE HEIGHT PROPERTY FOR ELIMINATING SPACING BETWEEN BOXES YESSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
 }
 
-.grid-divs {
+.cols {
+    display: flex;
+    flex: 1;
+}
+
+.rows {
+    display: flex;
+    flex: 1;
     border: 1px solid black;
-    color: transparent;
-    display: inline-block; /* using inline-block we can put one div below another, it also automatically goes onto the next line when container space ends */
     background: white;
 }
