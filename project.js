@@ -2,8 +2,9 @@ const parentDiv = document.querySelector("div");
 function makeGrid (gridDimensions) {
     for (let i = 1; i <= (gridDimensions * gridDimensions); i++) {
         const childDiv = document.createElement("div");
-        childDiv.textContent = "us";
         childDiv.classList.add("grid-divs");
+        childDiv.style.width = "50px";
+        childDiv.style.height = "50px";
         parentDiv.appendChild(childDiv);
             if ((i % gridDimensions) == 0) {
                 const lineBreak = document.createElement("br");
@@ -12,7 +13,7 @@ function makeGrid (gridDimensions) {
         }
     }
 
-makeGrid(32);
+makeGrid(4);
 
 const allChildDivs = document.querySelectorAll(".grid-divs");
 let clicky = false;
