@@ -77,7 +77,6 @@ function makeGrid (gridDimensions) {
         parentDivRef = parentDiv; // STORING CONTAINER (PARENTDIV) TO BE DELETED WHEN FUNCTION CALLED AGAIN
 
         const allChildDivs = document.querySelectorAll(".rows");
-        let clicky = false;
         
             allChildDivs.forEach((eachDiv) => { // have to keep this forEach loop inside the functions so that color changing works on new grid
                 eachDiv.addEventListener("mouseenter", () => {
@@ -86,20 +85,12 @@ function makeGrid (gridDimensions) {
                 eachDiv.addEventListener("mouseleave", () => {
                     eachDiv.style.backgroundColor = "white";
                 })
-                eachDiv.addEventListener ("click", () => { // use the if else statement inside the click event function to have the color selected inside the div after a click
+                eachDiv.addEventListener ("click", () => { // use the mouseleave event listener inside the click event function to have the color selected inside the div after a click
                     let newColor = getRandomColor();
                     eachDiv.style.backgroundColor = newColor;
-                    clicky = true;
-                    if (clicky) { // using that if mentioned in the comment just above
-                        eachDiv.addEventListener("mouseleave", () => {
+                    eachDiv.addEventListener("mouseleave", () => {
                             eachDiv.style.backgroundColor = newColor;
-                        })
-                        }
-                        else {
-                        eachDiv.addEventListener("mouseleave", () => {
-                            eachDiv.style.backgroundColor = "white";
-                        })
-                    }
+                    })
                 })
             })        
 }
