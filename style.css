@@ -35,11 +35,13 @@ body {
     flex-direction: column;
     height: 700px;
     width: 700px;
+    /* gap: 20px; (this will put gap between the rows) */
 }
 
 .cols {
     display: flex;
     flex-grow: 1;
+    /* gap: 20px; (this will put gap between the columns) */
 }
 
 .rows {
