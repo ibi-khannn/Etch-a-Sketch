@@ -39,12 +39,12 @@ body {
 
 .cols {
     display: flex;
-    flex: 1;
+    flex-grow: 1;
 }
 
 .rows {
     display: flex;
-    flex: 1;
-    border: 1px solid black;
+    flex-grow: 1;
+    border: 1px solid blue;
     background: white;
 }
